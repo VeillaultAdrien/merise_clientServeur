@@ -59,4 +59,7 @@ VALUES ((Select idPersonne FROM personnes p WHERE p.nom='Granger'), (Select idPe
 INSERT INTO lienParente (idParent, idEnfant, adoption, dateAdoption)
 VALUES ((Select idPersonne FROM personnes p WHERE p.nom='Rogue'), (Select idPersonne FROM personnes p WHERE p.nom='Lovegood'), 0, NULL);
 
+INSERT INTO lienParente (idParent, idEnfant, adoption, dateAdoption)
+VALUES ((Select idPersonne FROM personnes p WHERE p.nom='Weasley'), (Select idPersonne FROM personnes p WHERE p.nom='Black'), 1, to_date('16/09/1981', 'dd/mm/yyyy'));
+
 
