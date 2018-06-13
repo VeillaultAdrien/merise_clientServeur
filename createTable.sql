@@ -46,6 +46,9 @@ VALUES('Lovegood','Luna',1, to_date('21/08/1999', 'dd/mm/yyyy'));
 INSERT INTO personnes (nom, prenom, sexe, dateNaissance) 
 VALUES('Rogue','Severus',0, to_date('19/02/1974', 'dd/mm/yyyy'));
 
+INSERT INTO personnes (nom, prenom, sexe, dateNaissance) 
+VALUES('Mimi','Geignarde',1, to_date('19/02/2000', 'dd/mm/yyyy'));
+
 
 INSERT INTO lienParente (idParent, idEnfant, adoption, dateAdoption)
 VALUES ((Select idPersonne FROM personnes p WHERE p.nom='Black'), (Select idPersonne FROM personnes p WHERE p.nom='Potter'), 1,  to_date('16/09/1989', 'dd/mm/yyyy'));
@@ -61,5 +64,11 @@ VALUES ((Select idPersonne FROM personnes p WHERE p.nom='Rogue'), (Select idPers
 
 INSERT INTO lienParente (idParent, idEnfant, adoption, dateAdoption)
 VALUES ((Select idPersonne FROM personnes p WHERE p.nom='Weasley'), (Select idPersonne FROM personnes p WHERE p.nom='Black'), 1, to_date('16/09/1981', 'dd/mm/yyyy'));
+
+INSERT INTO lienParente (idParent, idEnfant, adoption, dateAdoption)
+VALUES ((Select idPersonne FROM personnes p WHERE p.nom='Black'), (Select idPersonne FROM personnes p WHERE p.nom='Mimi'), 1, to_date('16/09/2002', 'dd/mm/yyyy'));
+
+INSERT INTO lienParente (idParent, idEnfant, adoption, dateAdoption)
+VALUES ((Select idPersonne FROM personnes p WHERE p.nom='Lovegood'), (Select idPersonne FROM personnes p WHERE p.nom='Mimi'), 1,  to_date('16/09/2002', 'dd/mm/yyyy'));
 
 
